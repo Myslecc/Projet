@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Formulaire Bootstrap</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <header>    
+            <!--NAVBAR -->
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+                <a class="navbar-brand text-white">Florian</a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#divMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <ul class="navbar-nav mr-auto" id="divMenu">
+            <div class="dropdown">
+                <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Cours
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">PHP</a>
+                    <a class="dropdown-item" href="#">HTML</a>
+                    <a class="dropdown-item" href="#">CSS</a>
+                </div>
+                </div>
+                <li class="nav-item"><a class="nav-link text-white mr-auto" href="#">Articles</a></li>
+            
+                <li><li class="nav-item"><a class="nav-link text-white mr-auto" href="#">Contact</a></li>
+            </ul>
+            <form class="form-inline">
+				<div class="input-group">
+  					<input type="text" class="form-control" placeholder="Rechercher">
+  					<div class="input-group-append">
+    					<button class="btn btn-outline-info">Rechercher !</button>
+  					</div>
+				</div>
+			</form>
+
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary ml-4" data-toggle="modal" data-target="#exampleModal">
+	Connexion
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content card card-image" style="background-image: url('https://i.pinimg.com/236x/df/dd/6a/dfdd6a1bdf7f6f61e83a28fd07a2ca1c.jpg');">
+		<div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
+		<div class="modal-header">
+		  <h5 class="modal-title bg-info text-white" id="exampleModalLabel">Connexion</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+			<form id="form" name="form" method="post" action=""> 
+				<label>Email : 
+					<input name="username" placeholder="exemple@gmail.com" id="username" type="text" /></label> <br>
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+				<label>Mot de passe :
+				  <input name="password" id="password" type="password" />
+				</label>
+			<br>
+				<label>Confirmer votre mot de passe:
+				  <input type="password" name="confirm_password" id="confirm_password" />
+				  <span id='message'></span>
+				</label>
+			<i class="text-danger">N'oubliez pas de vous rappelez de votre mot de passe</i>
+		</form>
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+		  <button id="valider" type="submit" class="btn btn-success">Valider</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+</nav>
+
+</header>
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    Vous pouvez fermer cette alerte en cliquant sur la croix.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+<div class="container bg-white">
+    <h1>Formulaires</h1>
+    <hr>
+        <form>
+            <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" class="form-control" id="prenom" placeholder="Pierre" required>
+            </div>
+            <div class="form-group">
+                <label for="nom">Nom de famille</label>
+                <input type="text" class="form-control" id="nom" placeholder="Giraud" required>
+            </div>
+            <div class="form-group">
+                <label for="pseudo">Pseudo</label>
+                <input type="text" class="form-control" id="pseudo" placeholder="PierreGird" required>
+            </div>
+            <div class="form-group">
+                <label for="ville">Ville</label>
+                <input type="text" class="form-control" id="ville" placeholder="Ville" required>
+            </div>
+            <div class="form-group">
+                <label for="pays">Pays</label>
+                <input type="text" class="form-control" id="pays" placeholder="Pays" required>
+            </div>
+            <div class="form-group">
+                <label for="cp">Code postal</label>
+                <input type="number" class="form-control" id="cp" placeholder="Code postal" required>
+            </div>
+
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="Check">J'accepte les <a href="https://fr.wikipedia.org/wiki/Conditions_g%C3%A9n%C3%A9rales_d%27utilisation" target = "_blank">conditions générales d'utilisation</a></label>
+            </div>
+              <button class="btn btn-primary mt-3" type="submit">Envoyer</button> 
+         </form>
+</div>
+
+
+      <script>
+
+				$('#password, #confirm_password').on('keyup', function () {
+				if ($('#password').val() == $('#confirm_password').val()) {
+					$('#message').html('Bon').css('color', 'green');
+				} else 
+					$('#message').html('Mauvais').css('color', 'red');
+				}); 
+				
+	</script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
